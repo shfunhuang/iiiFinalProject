@@ -82,17 +82,12 @@ starCircle <- function(star, color, inner, outer, bias, lwd){
   #plot(0, xlim=c(-2,2), ylim=c(-2,2), type="n", xlab="", ylab="")
   for(k in 1:star){  
     segments(innerCircle[k,1], innerCircle[k,2], outerCircle[k,1], outerCircle[k,2], col=color, lwd=lwd)
-    #arrows(innerCircle[k,1], innerCircle[k,2], outerCircle[k,1], outerCircle[k,2], col=color, length=0.1)
-    #polygon(x=c(innerCircle[k,1], innerCircle[k,2]), y=c(outerCircle[k,1], outerCircle[k,2]), col=color)
+    
     if(k < star){
       segments(outerCircle[k,1], outerCircle[k,2], innerCircle[k+1,1], innerCircle[k+1,2], col=color, lwd=lwd)
-      #arrows(outerCircle[k,1], outerCircle[k,2], innerCircle[k+1,1], innerCircle[k+1,2], col=color, length=0.1)
-      #polygon(x=c(innerCircle[k,1], innerCircle[k,2]), y=c(outerCircle[k+1,1], outerCircle[k+1,2]), col=color)
     }
     else{
       segments(outerCircle[star,1], outerCircle[star,2], innerCircle[1,1], innerCircle[1,2], col=color, lwd=lwd)
-      #arrows(outerCircle[star,1], outerCircle[star,2], innerCircle[1,1], innerCircle[1,2], col=color, length=0.1)
-      #polygon(x=c(innerCircle[star,1], outerCircle[star,1]), y=c(innerCircle[1,2], outerCircle[1,2]), col=color)
     }
   }  
 }
