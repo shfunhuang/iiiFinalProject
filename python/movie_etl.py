@@ -87,21 +87,3 @@ for page in range(1, page_number*50, 50):
 f.close()
 
 
-rs = requests.session()
-line_num = 0
-f = open('nownews20141202.txt', 'r')
-#line_format = "http://www.nownews.com/n/2014/12/02/%s"
-for url in f.readlines():
-    line_num = line_num + 1
-    #url = line_format%(line.split('/')[7])
-    url = url.strip()
-    #print url
-    #res = rs.get(url)
-    #res_text = res.text.encode('utf-8')
-    #print res
-    #time.sleep(1)
-f.close()
-print line_num
-
-
-
